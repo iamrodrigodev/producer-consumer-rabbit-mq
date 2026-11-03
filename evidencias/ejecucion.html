@@ -1,0 +1,8 @@
+<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>RabbitMQ: registro de ejecución</title><style>body{font:15px/1.7 Arial,sans-serif;color:#262626;background:white;max-width:1100px;margin:50px auto;padding:0 30px}h1{font-size:30px}h2{font-size:17px;margin-top:32px}pre{white-space:pre-wrap;overflow-wrap:anywhere;background:#f5f5f5;border:1px solid #ddd;padding:20px;font-size:14px}p{color:#555}</style></head><body><h1>Producer y Consumer con RabbitMQ</h1><p>Registro de salida real de los programas del tutorial y del comando de consulta de RabbitMQ. Este documento presenta los archivos de registro guardados; no es una captura de una terminal.</p><h2>Productor: python send.py</h2><pre> [x] Sent &#x27;Hello World!&#x27;
+</pre><h2>Consumidor: python receive.py</h2><pre> [*] Waiting for messages. To exit press CTRL+C
+ [x] Received b&#x27;Hello World!&#x27;
+</pre><h2>Estado de la cola: rabbitmqctl list_queues</h2><pre>Timeout: 60.0 seconds ...
+Listing queues for vhost / ...
+name	type	messages_ready	messages_unacknowledged	consumers
+hello	quorum	0	0	1
+</pre><p>RabbitMQ 4.4.0 en Docker. Cola hello de tipo quorum. Un consumidor activo y cero mensajes pendientes al consultar la cola.</p></body></html>
